@@ -1,0 +1,97 @@
+.hero {
+    background: url("../img/decor/fern.png") right bottom no-repeat;
+    background-color: $blue;
+    height: 100%;
+    min-height: rem(648px);
+    color: #fff;
+    position: relative;
+    
+    @include tablets {
+        background-position: right bottom 149%;
+    }
+    @include phones {
+        background-size: contain;
+    }
+    
+    
+    &::after, &::before {
+        @include tablets {
+            display: none;
+        }
+    }
+
+    &::before {
+        position: absolute;
+        bottom: rem(-40px);
+        left: 2%;
+        content: url("../img/decor/flying_leaf.png");
+    }
+    &::after {
+        content: url("../img/decor/berries.png");
+        position: absolute;
+        bottom: rem(-40px);
+        right: 0;
+    }
+}
+.hero__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: rem(19px) 0 rem(50px);
+    background: url("../img/decor/bars.png") right bottom 193px / 50% auto no-repeat;
+
+    @include tablets {
+        background: none;
+    }
+}
+.hero__title-section {
+    width: 46%;
+
+    @include tablets {
+        width: 100%;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        &::before {
+            content: "";
+            margin-bottom: rem(17px);
+            height: 16rem;
+            width: rem(373px);
+            background: url("../img/decor/berries_bars_Tablets.png") center center / contain no-repeat;
+        }
+        
+    }
+}
+
+.hero__icons-section {
+    @include tablets {
+        display: none;
+    }
+}
+
+.hero__main-title {
+    font-size: rem(48px);
+    line-height: rem(58px);
+    font-weight: bold;
+    margin-bottom: rem(17px);
+    text-transform: uppercase;
+}
+.hero__title-desc {
+    font-size: rem(21px);
+    line-height: rem(25px);
+    margin-bottom: rem(52px);
+    padding-right: 14%;
+
+    @include tablets {
+        padding: 0 16%;
+        margin-bottom: rem(24px);
+    }
+    @include phones {
+        padding: 0 16%;
+    }
+}

@@ -1,0 +1,36 @@
+.order-section {
+    background: url("../img/decor/bgForma.jpg") center center no-repeat;
+    position: relative;
+
+    @media screen and (min-width: 768px) {
+        background: url("../img/decor/blueberryOrder.png") left 6%  bottom 13% no-repeat,
+        url("../img/decor/bgForma.jpg") center center no-repeat;
+    }
+
+    &::after {
+      content: "";
+      background-image: url("../../img/decor/blackberryOrder.png");
+      width: rem(196px);
+      height: rem(264px);
+      position: absolute;
+      background-size: contain;
+      right: 0;
+      top: -140px;
+
+      @include tablets {
+        width: 109px;
+        height: 147px;
+        top: -84px;
+      }
+    }
+}
+
+
+.order-section__title {
+    margin-bottom: rem(50px);
+    line-height: rem(58px);
+
+    @include tablets {
+        margin-bottom: 31px;
+    }
+}

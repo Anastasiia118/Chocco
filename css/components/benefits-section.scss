@@ -1,0 +1,19 @@
+.benefits-section {
+    position: relative;
+    background: url("../img/decor/leaf_benefits.png") left top 50% no-repeat;
+
+    @include phones {
+        background: none;
+    }
+
+    &::before {
+        content: url("../img/decor/bars_raspberry.png");
+        position: absolute;
+        bottom: rem(-80px);
+        left: 0;
+
+        @include phones {
+            display: none;
+        }
+    }
+}

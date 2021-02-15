@@ -1,0 +1,58 @@
+$containerWidth: 980px;
+$baseFontSize: 18px;
+
+//z-indexes
+
+$z-fixed-menu: 100;
+
+//colors
+
+$blue: #61C4D9;
+$darkGreen: #2E4E3F;
+
+//breakpoints 
+
+$tablets : 768px;
+$phones : 480px;
+
+
+@import "./media.scss";
+
+@import "./normalize.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300;400;500;700;800&display=swap');
+@import "./layout.scss";
+
+//components
+
+@import "./components/hero.scss";
+@import "./components/header.scss";
+@import "./components/hamburger.scss";
+@import "./components/menu.scss";
+@import "./components/features.scss";
+@import "./components/feature.scss";
+@import "./components/btn.scss";
+@import "./components/section.scss";
+@import "./components/headline.scss";
+@import "./components/benefit.scss";
+@import "./components/benefits.scss";
+@import "./components/benefits-section.scss";
+@import "./components/products-section.scss";
+@import "./components/product.scss";
+@import "./components/ingredients.scss";
+@import "./components/team.scss";
+@import "./components/products-menu.scss";
+@import "./components/reviews.scss";
+@import "./components/interactive-avatar.scss";
+@import "./components/reviews-section.scss";
+@import "./components/player.scss";
+@import "./components/order-section.scss";
+@import "./components/form.scss";
+@import "./components/radio.scss";
+@import "./components/fixed-menu.scss";
+@import "./components/overlay.scss";
+@import "./components/modal.scss";
+
+
+
+

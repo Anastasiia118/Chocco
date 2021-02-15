@@ -1,0 +1,35 @@
+.header{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.phone-number.header__phone-number {
+
+    @include tablets {
+        display: none;
+    }
+}
+
+.phone-number {
+    font-size: rem(22px);
+    line-height: rem(18px);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.phone-number__text {
+    white-space: nowrap;
+}
+
+.phone-number__icon {
+    flex-shrink: 0;
+}
+
+.phone-number__icon-elem {
+    width: rem(13px);
+    height: rem(13px);
+    margin-right: rem(6px);
+   
+}

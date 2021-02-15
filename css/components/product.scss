@@ -1,0 +1,144 @@
+.products-slider {
+    position: relative;
+
+    .bx-wrapper {
+        box-shadow: none;
+        border: 0;
+        background: transparent;
+
+    }
+}
+
+.products-slider__arrow {
+    background: url("../img/svg_icons/arrowRight.svg") center center no-repeat;
+    background-size: contain;
+    display: block;
+    width: 13.5px;
+    height: 27px;
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+
+    @include tablets {
+        top: 25%;
+    }
+
+    &--next {
+        right: 0;
+
+        @include tablets {
+            right: 19%;
+        }
+    }
+
+    &--prev {
+        left: 0;
+        transform: rotate(-180deg);
+
+        @include tablets {
+            left: 19%;
+        }
+    }
+
+}
+
+.product__container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    @include tablets {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+}
+.product__col-img {
+    @include tablets {
+        width: rem(430px);
+        height: rem(370px);
+    }
+    @include phones {
+        width: rem(383px);
+        height: rem(296px);
+    }
+}
+.product__col-desc {
+    flex-direction: column;
+    align-items: start;
+    width: 43%; 
+    // padding-left: 20px;
+    padding-right: 20px; 
+    display: flex;
+
+    @include tablets {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+}
+
+.product__title {
+    font-weight: bold;
+    font-size: rem(36px);
+    color: #292929;
+    text-transform: uppercase;
+    margin-bottom: rem(13px);
+
+    @include tablets {
+        font-size: 30px;
+        line-height: 36px;
+    }
+}
+.product__information {
+    @include tablets {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+}
+.product__desc{
+    margin-bottom: rem(10px);
+
+    @include tablets {
+       padding: 0 13%;
+       margin-bottom: rem(24px);
+    }
+}
+.product__values{
+    display: flex;
+    align-items: center; 
+    margin-bottom: rem(10px);
+}
+.product__value {
+    margin-right: rem(44px);
+}
+.product__value-data{
+    color: black;
+    font-weight: bold;
+}
+.product__order{
+    display: flex;
+    align-items: center;
+    text-align: justify;
+}
+.product__price{
+    font-family: Alegreya Sans;
+    font-style: normal;
+    font-weight: 300;
+    font-size: rem(60px);
+    text-transform: uppercase;
+    color:#151515;
+    margin-right: rem(32px);
+}
+.btn--cactus--green{
+    background: #497870;
+    color: white;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
