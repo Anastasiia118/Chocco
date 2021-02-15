@@ -1145,7 +1145,7 @@ button {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url("../../img/icons/PlayWhite.png") center center no-repeat, url("../img/videopic.png") center center/cover no-repeat;
+  background: url("../img/icons/PlayWhite.png") center center no-repeat, url("../img/videopic.png") center center/cover no-repeat;
   cursor: pointer;
 }
 
@@ -1165,7 +1165,7 @@ button {
 .player__start {
   width: 13px;
   height: 17px;
-  background: url("../../img/svg_icons/play.svg") center center no-repeat;
+  background: url("../img/svg_icons/play.svg") center center no-repeat;
 }
 
 .player__playback {
