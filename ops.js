@@ -1,83 +1,111 @@
 const sections = $("section");
 const display = $(".maincontent");
+const sideMenu = $(".fixed-menu");
+const menuItems = sideMenu.find(".fixed-menu__item");
 
 let inScroll = false;
 
 sections.first().addClass("active");
 
+const countSectionPosition = (sectionEq) => {
+    const position = sectionEq * -100;
+
+    if (isNaN(position)) {
+        console.error("не верное значение countSectionPosition");
+        return 0;
+    }
+
+    return position;
+}
+
+const changeMenuThemeForSection = sectionEq => {
+    const currentSection = sections.eq(sectionEq);
+    const menuTheme = currentSection.attr("data-sidemenu-theme");
+    const activeClass = "fixed-menu--black";
+
+         if(menuTheme === "black") {
+                sideMenu.addClass(activeClass);
+         } else {
+                sideMenu.removeClass("fixed-menu--black");
+         }
+};
+
+const resetActiveClassForItem = (items, itemEq, activeClass) => {
+    items.eq(itemEq).addClass(activeClass).siblings().removeClass(activeClass);
+}
+
 const performTransition = (sectionEq) => {
 
-    if (inScroll === false) {
+    if (inScroll) return;
+
+    const transitionOver = 1000;
+    const mouseInertiaOver = 300;
         inScroll = true;
-        const position = sectionEq * -100;
+        const position = countSectionPosition(sectionEq);
 
-        const currentSection = sections.eq(sectionEq);
-        const menuTheme = currentSection.attr("data-sidemenu-theme");
-        const sideMenu = $(".fixed-menu");
-
-            if(menuTheme === "black") {
-                sideMenu.addClass("fixed-menu--black");
-            } else {
-                sideMenu.removeClass("fixed-menu--black");
-            }
-
+        changeMenuThemeForSection(sectionEq);
+        
         display.css({
          transform: `translateY(${position}%)`,
         });
 
-        sections.eq(sectionEq).addClass("active").siblings().removeClass("active");
-
+        resetActiveClassForItem(sections, sectionEq, "active");
 
         setTimeout(() => {
             inScroll = false;
-            sideMenu.find(".fixed-menu__item").eq(sectionEq).addClass("fixed-menu__item--active").siblings().removeClass("fixed-menu__item--active");
+            resetActiveClassForItem(menuItems, sectionEq, "fixed-menu__item--active");
 
-        }, 1300);
-    }
+        }, transitionOver + mouseInertiaOver);
 };
 
-const scrollViewport = direction => {
+const viewportScroller = () => {
     const activeSection = sections.filter(".active");
     const nextSection = activeSection.next();
     const prevSection = activeSection.prev();
 
-    if (direction === "next" && nextSection.length) {
+    return {
+        next() {
+            if (nextSection.length) {
+                performTransition(nextSection.index())
+            }
+        },
+        prev() {
+            if (prevSection.length) {
+                performTransition(prevSection.index())
+            }
+        },
+    };
+};
 
-        performTransition(nextSection.index())
-
-    }
-
-    if (direction === "prev" && prevSection.length) {
-
-        performTransition(prevSection.index())
-    }
-}
-
-$(window).on("wheel", e => {
+$(window).on("wheel", (e) => {
     const deltaY = e.originalEvent.deltaY;
+    const scroller = viewportScroller();
 
     if (deltaY > 0) {
-        scrollViewport("next");
+        scroller.next();
     }
 
     if (deltaY < 0) {
-        scrollViewport("prev");
+        scroller.prev();
     }
 });
 
 $(window).on("keydown", e => {
     const tagName = e.target.tagName.toLowerCase();
+    const userTypingInInputs = tagName === "input" || tagName === "textarea";
+    const scroller = viewportScroller();
 
-    if (tagName != "input" && tagName != "textarea") {
-        switch (e.keyCode) {
-            case 79: //O
-              scrollViewport("prev");
-              break;
-            case 76: //L
-                scrollViewport("next");
-              break;
+    if (userTypingInInputs) return;
+
+    switch (e.keyCode) {
+        case 38: 
+          scroller.prev();
+          break;
+        case 40: 
+          scroller.next();
+          break;
         }
-    }
+
 });
 
 $("[data-scroll-to]").click(e => {
@@ -89,3 +117,14 @@ $("[data-scroll-to]").click(e => {
 
     performTransition(reqSection.index());
 })
+
+//https://github.com/mattbryson/TouchSwipe-Jquery-Plugin
+
+$("body").swipe( {
+    swipe:function(
+        event,
+        direction,
+    ) {
+      alert(direction); 
+    }
+  });
