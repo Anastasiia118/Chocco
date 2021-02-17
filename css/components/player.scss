@@ -2,6 +2,16 @@
     width: 662px;
     height: 392px;
     margin: 0 auto;
+
+    @include tablets {
+        width: 594px;
+        height: 351px;
+    }
+
+    @include phones {
+        width: 394px;
+        height: 233px;
+    }
 }
 
 .player {
@@ -72,7 +82,13 @@
 .player__start {
     width: 13px;
     height: 17px;
-    background: url("../img/svg_icons/play.svg") center center no-repeat;
+    background: url("../img/svg_icons/play.svg") center center /contain no-repeat;
+
+    @include tablets {
+        width: 10px;
+        height: 14px;
+    }
+   
     
 }
 
@@ -81,6 +97,16 @@
     width: 445px;
     height: 6px;
     background: #626262;
+
+    @include tablets {
+        width: 400px;
+        
+    }
+    @include phones {
+        width: 265px;
+        height: 4px;
+        
+    }
 
     &-button {
 

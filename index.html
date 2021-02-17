@@ -39,7 +39,7 @@
                                     <a data-scroll-to="player"  href="" class="menu__link">Как мы работаем</a>
                                 </li>
                                 <li class="menu__item">
-                                    <a href="" class="menu__link">Контакты</a>
+                                    <a data-scroll-to="contacts" href="" class="menu__link">Контакты</a>
                                 </li>
                             </ul>
                         </nav>
@@ -939,6 +939,61 @@
                     </form>
                 </div>
             </section>
+            <section data-sidemenu-theme="black" data-section-id="contacts" class="section map-section">
+                <div id="map" class="map"></div>
+                <footer class="footer-container">
+                    <div class="footer">
+                        <div class="contacts">
+                            <div class="address">Москва, ул.Новый Арбат, д.31/12</div>
+                            <a href="tel:+88009039090" class="footer-phone">
+                                <span class="footer-phone__icon">
+                                   <svg class="footer-phone__svg">
+                                      <use xlink:href="./sprite.svg#phone_green">
+                                      </use>>
+                                   </svg>
+                                </span>
+                                <span class="footer-phone__text">8 800 903 90 90</span>
+                            </a>
+                        </div>
+                        <div class="socials">
+                            <ul class="socials__list">
+                                <li class="socials__item socials__item--icon--vk">
+                                    <a href="#" class="socials__link">
+                                        <svg class="socials__svg">
+                                            <use xlink:href="./sprite.svg#vk">
+                                            </use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="socials__item socials__item--icon--fb">
+                                    <a href="#" class="socials__link">
+                                        <svg class="socials__svg">
+                                            <use xlink:href="./sprite.svg#fb">
+                                            </use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="socials__item socials__item--icon--insta">
+                                    <a href="#" class="socials__link">
+                                        <svg class="socials__svg">
+                                            <use xlink:href="./sprite.svg#insta">
+                                            </use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="socials__item socials__item--icon--twitter">
+                                    <a href="#" class="socials__link">
+                                        <svg class="socials__svg">
+                                            <use xlink:href="./sprite.svg#twitter">
+                                            </use>
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </footer>
+            </section>
         </div>
     </div>
     <nav class="fixed-menu">
@@ -951,7 +1006,7 @@
             <li class="fixed-menu__item"> <a data-scroll-to="reviews"  href="" class="fixed-menu__link"></a> </li>
             <li class="fixed-menu__item"> <a data-scroll-to="player"  href="" class="fixed-menu__link"></a> </li>
             <li class="fixed-menu__item"> <a data-scroll-to="order"   href="" class="fixed-menu__link"></a> </li>
-            <li class="fixed-menu__item"> <a href="" class="fixed-menu__link"></a> </li>
+            <li class="fixed-menu__item"> <a data-scroll-to="contacts" href="" class="fixed-menu__link"></a> </li>
         </ul>
     </nav>
     <a href="#" class="hamburger" id="burger">
@@ -963,25 +1018,25 @@
         <nav class="menu overlay__menu">
             <ul class="menu__list overlay__menu-list">
                 <li class="menu__item">
-                    <a href="" class="menu__link">О нас</a>
+                    <a data-scroll-to="benefits"  href="" class="menu__link">О нас</a>
                 </li>
                 <li class="menu__item">
-                    <a href="" class="menu__link">Батончики</a>
+                    <a data-scroll-to="products"  href="" class="menu__link">Батончики</a>
                 </li>
                 <li class="menu__item">
-                    <a href="" class="menu__link">Команда</a>
+                    <a data-scroll-to="team"   href="" class="menu__link">Команда</a>
                 </li>
                 <li class="menu__item">
-                    <a href="" class="menu__link">Меню</a>
+                    <a data-scroll-to="menu"   href="" class="menu__link">Меню</a>
                 </li>
                 <li class="menu__item">
-                    <a href="" class="menu__link">Отзывы</a>
+                    <a data-scroll-to="reviews"  href="" class="menu__link">Отзывы</a>
                 </li>
                 <li class="menu__item">
-                    <a href="" class="menu__link">Как мы работаем</a>
+                    <a data-scroll-to="player"   href="" class="menu__link">Как мы работаем</a>
                 </li>
                 <li class="menu__item">
-                    <a href="" class="menu__link">Контакты</a>
+                    <a  data-scroll-to="contacts"  href="" class="menu__link">Контакты</a>
                 </li>
             </ul>
         </nav>
@@ -993,12 +1048,9 @@
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="./player.js"></script>
     <script src="./ops.js"></script>
-    <script src="mobile-detect.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/mobile-detect@1.4.4/mobile-detect.min.js"></script>
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
     <script src="./menu.js"></script>
@@ -1007,6 +1059,9 @@
     <script src="./menu_accordeon.js"></script>
     <script src="./reviews_slider.js"></script>
     <script src="./modal_forma.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
+    <script src="./map.js"></script>
+    <script src="mobile-detect.js"></script>
 </body>
 
 </html>

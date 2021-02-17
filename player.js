@@ -92,9 +92,14 @@ const onPlayerStateChange = event => {
 };
 
 function onYouTubeIframeAPIReady() {
-        player = new YT.Player('yt-player', {
-            height: '392',
-            width: '662',
+
+    const playerWidth = $("player-section__container").width();
+    const playerHeight = $("player-section__container").height();
+
+
+    player = new YT.Player('yt-player', {
+            height: playerHeight,
+            width: playerWidth,
             videoId: 'JMpWY1Ozt5I',
             events: {
                 onReady: onPlayerReady,
