@@ -3,8 +3,8 @@ const display = $(".maincontent");
 const sideMenu = $(".fixed-menu");
 const menuItems = sideMenu.find(".fixed-menu__item");
 
-// const  mobileDetect = new MobileDetect(window.navigator.userAgent);
-// const isMobile = mobileDetect.mobile();
+const  mobileDetect = new MobileDetect(window.navigator.userAgent);
+const isMobile = mobileDetect.mobile();
 
 let inScroll = false;
 
@@ -127,6 +127,8 @@ $("[data-scroll-to]").click(e => {
 
     //https://github.com/mattbryson/TouchSwipe-Jquery-Plugin
 
+    if(isMobile) {
+
         $("body").swipe({
             swipe: function (event, direction) {
                 const scroller = viewportScroller();
@@ -137,7 +139,8 @@ $("[data-scroll-to]").click(e => {
         
                 scroller[scrollDirection]();
             }
-        });   
+        });  
+    }
 
 
 
