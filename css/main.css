@@ -879,6 +879,11 @@ button {
   color: #fff;
   padding: 109px 84px;
 }
+@media screen and (max-width: 480px) {
+  .products-menu-section__title {
+    padding-left: 10px;
+  }
+}
 
 .products-menu {
   position: absolute;
@@ -914,6 +919,11 @@ button {
 }
 .products-menu__trigger--3 {
   background-image: url("../img/products_menu/menu_item3.png");
+}
+@media screen and (max-width: 480px) {
+  .products-menu__trigger {
+    width: 5rem;
+  }
 }
 
 .products-menu__text {
@@ -1227,19 +1237,19 @@ button {
 }
 .order-section::after {
   content: "";
-  background-image: url("../../img/decor/blackberryOrder.png");
+  background-image: url("../img/decor/blackberryOrder.png");
   width: 10.8888888889rem;
   height: 14.6666666667rem;
   position: absolute;
   background-size: contain;
   right: 0;
-  top: -140px;
+  top: -7.7777777778rem;
 }
 @media screen and (max-width: 768px) {
   .order-section::after {
-    width: 109px;
-    height: 147px;
-    top: -84px;
+    width: 6.0555555556rem;
+    height: 8.1666666667rem;
+    top: -4.6666666667rem;
   }
 }
 

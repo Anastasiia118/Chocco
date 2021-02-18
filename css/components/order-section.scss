@@ -9,18 +9,18 @@
 
     &::after {
       content: "";
-      background-image: url("../../img/decor/blackberryOrder.png");
+      background-image: url("../img/decor/blackberryOrder.png");
       width: rem(196px);
       height: rem(264px);
       position: absolute;
       background-size: contain;
       right: 0;
-      top: -140px;
+      top: rem(-140px);
 
       @include tablets {
-        width: 109px;
-        height: 147px;
-        top: -84px;
+        width: rem(109px);
+        height: rem(147px);
+        top: rem(-84px);
       }
     }
 }
