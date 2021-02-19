@@ -1,7 +1,20 @@
 {
   "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "cross-env": "^7.0.3",
     "gulp": "^4.0.2",
-    "gulp-cli": "^2.3.0"
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-cli": "^2.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-if": "^3.0.0",
+    "gulp-rm": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-smile-px2rem": "^0.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "node-sass": "^5.0.0"
   },
   "name": "chocco-project",
   "version": "1.0.0",
@@ -145,6 +158,7 @@
     "isarray": "^1.0.0",
     "isexe": "^2.0.0",
     "isobject": "^3.0.1",
+    "jquery": "^3.5.1",
     "jquery-touchswipe": "^1.6.19",
     "json-stable-stringify-without-jsonify": "^1.0.1",
     "just-debounce": "^1.1.0",
@@ -168,8 +182,10 @@
     "nan": "^2.14.2",
     "nanomatch": "^1.2.13",
     "next-tick": "^1.0.0",
+    "normalize": "^0.3.1",
     "normalize-package-data": "^2.5.0",
     "normalize-path": "^3.0.0",
+    "normalize.css": "^8.0.1",
     "now-and-later": "^2.0.1",
     "number-is-nan": "^1.0.1",
     "object-copy": "^0.1.0",
@@ -287,7 +303,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "gulp": "gulp"
+    "gulp": "cross-env NODE_ENV=dev gulp",
+    "build": "cross-env NODE_ENV=prod build"
   },
   "repository": {
     "type": "git",

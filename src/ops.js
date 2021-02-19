@@ -140,7 +140,7 @@ $("[data-scroll-to]").click(e => {
                 scroller[scrollDirection]();
             }
         });  
-    }
+    };
 
 
 

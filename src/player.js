@@ -114,6 +114,6 @@ function onYouTubeIframeAPIReady() {
                 modestbranding: 0
             }
         });
-    }
+    };
 
 eventsInit();
