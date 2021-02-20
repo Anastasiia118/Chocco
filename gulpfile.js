@@ -4,7 +4,6 @@ const sass = require('gulp-sass');
 const concat = require('gulp-concat');
 const browserSync = require('browser-sync').create();
 const reload = browserSync.reload;
-const gcmq = require('gulp-group-css-media-queries');
 const cleanCSS = require('gulp-clean-css');
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
@@ -25,22 +24,23 @@ task( "copy:html", () => {
        .pipe(reload({stream:true}));
 });
 
-task( "copy:css", () => {
-    return src("src/css/**/*")
-    .pipe(dest("dist/css"))
-    .pipe(reload({stream:true}));
-});
-
 task( "copy:img", () => {
     return src("src/img/**/*")
     .pipe(dest("dist/img"))
     .pipe(reload({stream:true}));
 });
 
+const scripts = [
+    'node_modules/jquery/dist/jquery.min.js',
+    'node_modules/jquery-touchswipe/jquery.touchSwipe.js',
+    'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
+    'node_modules/mobile-detect/mobile-detect.min.js',
+    'node_modules/bxslider/dist/jquery.bxslider.min.js',
+    'src/*.js'
+]
 
-
-task( 'scripts', () => {
-    return src("src/*.js")
+task( "scripts", () => {
+    return src(scripts)
     .pipe(sourcemaps.init())
     .pipe(concat('main.js'))
     .pipe(uglify())

@@ -42,7 +42,7 @@ function addListener(){
     video.addEventListener('click', playStop)
 
     durationControl.addEventListener('click', setVideoDuration);
-    durationControl.addEventListener('mousedown', stopInterval);
+    durationControl.addEventListener('click', stopInterval);
 
     soundControl.addEventListener('click', changeSoundVolume);
 }
