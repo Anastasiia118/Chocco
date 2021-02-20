@@ -93,5 +93,6 @@
     }
     @include phones {
         padding: 0 16%;
+        margin-bottom: rem(10px);
     }
 }

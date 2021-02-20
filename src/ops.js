@@ -119,8 +119,15 @@ $("[data-scroll-to]").click(e => {
     const $this = $(e.currentTarget);
     const target = $this.attr("data-scroll-to");
     const reqSection = $(`[data-section-id=${target}]`);
+    const buttonOverlay = document.querySelector("#burger");
+    const menuOverlay = document.querySelector("#overlay");
 
     performTransition(reqSection.index());
+
+    if(menuOverlay.classList.contains('overlay--active')){
+        buttonOverlay.classList.toggle('hamburger--active');
+        menuOverlay.classList.toggle('overlay--active');
+    };
 });
 
 

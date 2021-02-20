@@ -55,6 +55,13 @@ task( "copy:svg", () => {
     .pipe(reload({stream:true}));
 });
 
+task( "copy:mp4", () => {
+    return src("src/*.mp4")
+    .pipe(dest("dist"))
+    .pipe(reload({stream:true}));
+});
+
+
 const styles = [
     'node_modules/normalize.css/normalize.css',
     'src/css/main.scss'
@@ -87,6 +94,7 @@ task("watch", () => {
     watch("./src/img/**/*", series("copy:img"));
     watch("./src/*.js", series("scripts"));
     watch("./src/*.svg", series("copy:svg"));
+    watch("./src/*.mp4", series("copy:mp4"));
 });
 
 
@@ -94,13 +102,13 @@ task(
     "default",
     series(
         "clean",
-         parallel("copy:html", "copy:img", "scripts", "copy:svg", "styles"),
+         parallel("copy:html", "copy:img", "scripts", "copy:svg", "copy:mp4", "styles"),
          parallel("watch", "server")
           )
  );
 
  task(
     "build",
-    series( "clean", parallel("copy:html", "copy:img", "scripts", "copy:svg", "styles"))
+    series( "clean", parallel("copy:html", "copy:img", "scripts", "copy:svg", "copy:mp4", "styles"))
  );
 
