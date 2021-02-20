@@ -38,15 +38,9 @@ $('.form').submit(e => {
                 to: to.val(),
             },
             error: data => {
-                // console.log(data);
                 const message = data.responseJSON.message;
                 content.text(message);
                 modal.addClass("error-modal");
-
-                $.fancybox.open({
-                    src: "#modal",
-                    type: "inline",
-                });
             }
     
         });
@@ -71,8 +65,8 @@ $('.form').submit(e => {
     
 });
 
-$('.app--submit--btn').click(e => {
+$(".app--submit--btn").click(e => {
     e.preventDefault();
 
-    $.fancybox.close()
+    $.fancybox.close();
 });

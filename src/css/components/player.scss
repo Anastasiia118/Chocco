@@ -7,13 +7,15 @@
         position: absolute;
         background-size: contain;
         background-repeat: no-repeat;
-        left: -2%;
+        left: -10%;
         top: -39%;
 
         @include tablets {
             width: rem(118px);
             height: rem(170px);
-            top: -57%;
+            top:-45%;
+            left: -2%;
+
         }
   
       }
