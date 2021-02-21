@@ -39,12 +39,12 @@ function initPlayButton(){
 }
 
 function addListener(){
-    video.addEventListener('click', playStop)
+    video.addEventListener('click', playStop);
 
-    durationControl.addEventListener('click', setVideoDuration);
-    durationControl.addEventListener('click', stopInterval);
+    durationControl.addEventListener('change', setVideoDuration);
+    durationControl.addEventListener('mousedown', stopInterval);
 
-    soundControl.addEventListener('click', changeSoundVolume);
+    soundControl.addEventListener('change', changeSoundVolume);
 }
 
 function playStop (){
@@ -56,8 +56,8 @@ function playStop (){
         intervalId = setInterval(updateDuration, NORMAL_UPDATE_RANGE);
         video.play();
     }else{
-       stopInterval()
-    }
+       stopInterval();
+    };
 }
 
 function updateDuration(){
@@ -65,11 +65,11 @@ function updateDuration(){
 }
 
 function setVideoDuration(){
-    intervalId = setInterval(updateDuration, NORMAL_UPDATE_RANGE)
+    intervalId = setInterval(updateDuration, NORMAL_UPDATE_RANGE);
     video.currentTime = durationControl.value;
 
     if(video.paused){
-        playButtonVideo.classList.add('video-player__img--hidden')
+        playButtonVideo.classList.add('video-player__img--hidden');
         video.play();
        
     }
@@ -77,7 +77,7 @@ function setVideoDuration(){
 
 function stopInterval(){
     video.pause();
-    clearInterval(intervalId)
+    clearInterval(intervalId);
 }
 
 function soundOf(){

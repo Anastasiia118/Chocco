@@ -144,7 +144,9 @@ $("[data-scroll-to]").click(e => {
                 if(direction === "up") scrollDirection = "next";
                 if(direction === "down") scrollDirection = "prev";
         
-                scroller[scrollDirection]();
+                if(scroller[scrollDirection]){
+                    scroller[scrollDirection]();
+                };
             }
         });  
     };
